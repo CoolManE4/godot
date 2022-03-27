@@ -187,6 +187,7 @@ real_t Vector3::dot(const Vector3 &p_with) const {
 	return x * p_with.x + y * p_with.y + z * p_with.z;
 }
 
+// Abs is short for absolute
 Vector3 Vector3::abs() const {
 	return Vector3(Math::abs(x), Math::abs(y), Math::abs(z));
 }
@@ -195,6 +196,12 @@ Vector3 Vector3::sign() const {
 	return Vector3(SIGN(x), SIGN(y), SIGN(z));
 }
 
+// Floor removes decimals
+// Example:
+// Math::floor(1.5)
+// would return
+// 1
+// Hopefully this helps :)
 Vector3 Vector3::floor() const {
 	return Vector3(Math::floor(x), Math::floor(y), Math::floor(z));
 }
@@ -207,6 +214,7 @@ Vector3 Vector3::round() const {
 	return Vector3(Math::round(x), Math::round(y), Math::round(z));
 }
 
+// Lerp is short for linear interpolation, you've probably already heard of this, but if you're not sure what it is it should be useful to you :)
 Vector3 Vector3::lerp(const Vector3 &p_to, const real_t p_weight) const {
 	return Vector3(
 			x + (p_weight * (p_to.x - x)),
